@@ -1,5 +1,6 @@
 var s;
 var scl = 80;
+let state = start;
 
 function setup() {
   createCanvas(1000, 1000);
@@ -7,6 +8,8 @@ function setup() {
   frameRate(7);
   food = createVector(random(width), random(height));
   pickLocation();
+  textAlign(CENTER);
+  textSize(20);
 }
 
 function pickLocation() {
@@ -22,6 +25,25 @@ function mousePressed() {
 
 function draw() {
 
+switch (state) {
+
+  case ('start'):
+    start();
+  break;
+
+  case ('gamePlay'):
+    gamePlay();
+  break;
+}
+
+}
+
+function start(){
+  background('51');
+  text('click to adopt doggos', w/2, h/2);
+}
+
+function gamePlay(){
   background('rgba(45,225,45, 0.25)');
   s.update();
   s.show();

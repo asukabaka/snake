@@ -21,7 +21,8 @@ function mousePressed() {
 }
 
 function draw() {
-  background(51);
+
+  background('rgba(45,225,45, 0.25)');
   s.update();
   s.show();
   s.death();

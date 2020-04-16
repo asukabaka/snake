@@ -1,6 +1,6 @@
 var s;
 var scl = 80;
-let state = start;
+let state = 'splash';
 
 function setup() {
   createCanvas(1000, 1000);
@@ -9,7 +9,7 @@ function setup() {
   food = createVector(random(width), random(height));
   pickLocation();
   textAlign(CENTER);
-  textSize(20);
+  textSize(50);
 }
 
 function pickLocation() {
@@ -19,15 +19,11 @@ function pickLocation() {
   food.mult(scl);
 }
 
-function mousePressed() {
-  s.total++;
-}
-
 function draw() {
 
 switch (state) {
 
-  case ('start'):
+  case ('splash'):
     start();
   break;
 
@@ -40,7 +36,10 @@ switch (state) {
 
 function start(){
   background('51');
-  text('click to adopt doggos', w/2, h/2);
+  text('click to adopt doggos', 500, 500);
+  function mousePressed() {
+    state = 'gamePlay';
+  }
 }
 
 function gamePlay(){

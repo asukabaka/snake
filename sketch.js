@@ -48,7 +48,7 @@ function mousePressed() {
 }
 
 function startMousePressed() {
-  state = gamePlay;
+  state = 'gamePlay';
 }
 
 function start() {
@@ -57,7 +57,7 @@ function start() {
 }
 
 function gamePlay() {
-  background('rgba(45,225,45, 0.25)');
+  background(51);
   s.update();
   s.show();
   s.death();

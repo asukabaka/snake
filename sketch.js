@@ -1,10 +1,10 @@
 var s;
-var scl = 20;
+var scl = 80;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1000, 1000);
   s = new Snake();
-  frameRate(10);
+  frameRate(7);
   food = createVector(random(width), random(height));
   pickLocation();
 }
@@ -43,5 +43,5 @@ function keyPressed() {
     s.dir(1,0);
   } else if (keyCode === LEFT_ARROW) {
     s.dir(-1,0);
-  } 
+  }
 }

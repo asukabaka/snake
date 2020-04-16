@@ -1,3 +1,11 @@
+let smalldog;
+let  girl;
+
+function preload(){
+  smalldog = loadImage('dog.png');
+  girl = loadImage('girl_2.png');
+}
+
 function Snake() {
   this.x = 0;
   this.y = 0;
@@ -28,13 +36,13 @@ function Snake() {
       if (d < 1) {
         console.log('starting over');
         this.total = 0;
-        this.tail = [];      
+        this.tail = [];
       }
     }
   }
 
-  
-  
+
+
   this.update = function () {
     //for (var i = 0; i < this.total - 1; i++) {
     //  this.tail[i] = this.tail[i+1];
@@ -47,7 +55,7 @@ function Snake() {
       }
     }
     this.tail[this.total-1] = createVector(this.x, this.y);
-    
+
 
     this.x = this.x + this.xspeed * scl;
     this.y = this.y + this.yspeed * scl;
@@ -56,12 +64,11 @@ function Snake() {
     this.y = constrain (this.y, 0, height - scl);
 
   }
-  
+
   this.show = function () {
-    fill(255);
     for (var i = 0; i < this.tail.length; i++) {
-      rect (this.tail[i].x, this.tail[i].y, scl, scl);
+      image(smalldog, this.tail[i].x, this.tail[i].y, scl, scl);
     }
-    rect (this.x, this.y, scl, scl);
+    image(girl, this.x, this.y, scl, scl);
   }
 }
